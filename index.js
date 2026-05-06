@@ -21,7 +21,7 @@ res.status(201).json({ message: "Admission Form Submitted Successfully!" });
 
 res.status(500).json({ error: "Server Error" });
 }
-});q
+});
 // Root route for Vercel testing
 app.get('/', (req, res) => res.send("Backend is running..."));
 const PORT = process.env.PORT || 5000;
