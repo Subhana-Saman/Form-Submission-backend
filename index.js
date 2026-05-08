@@ -12,7 +12,10 @@ app.use(cors({
     credentials: true
 }));
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI)
+// mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, {
+    serverSelectionTimeoutMS: 5000 // 5 seconds mein timeout ho jaye agar connect na ho
+})
 .then(() => console.log("MongoDB Atlas Connected"))
 .catch(err => console.log(err));
 // API Routes
